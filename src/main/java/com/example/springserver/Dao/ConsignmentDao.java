@@ -1,5 +1,6 @@
 package com.example.springserver.Dao;
 
+import com.example.springserver.Models.Category;
 import com.example.springserver.Models.Consignment;
 import com.example.springserver.Repository.ConsignmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,8 @@ public class ConsignmentDao
         repository.deleteById(consignmentId);
     }
 
+    public Consignment getConsignment(int consignmentId) {return repository.findById(consignmentId).get();}
+
     public List<Consignment> getAllConsignments()
     {
         List<Consignment> consignments = new ArrayList<>();
@@ -29,4 +32,6 @@ public class ConsignmentDao
                 .forEach(consignments::add);
         return consignments;
     }
+
+
 }

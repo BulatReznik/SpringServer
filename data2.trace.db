@@ -38,3 +38,15 @@ Delete * from users [42001-214]
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "Delete [*]* users"; ожидалось "identifier"
 Syntax error in SQL statement "Delete [*]* users"; expected "identifier"; SQL statement:
 Delete * users [42001-214]
+2022-12-19 16:16:42 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "delete [*]* from orders"; ожидалось "identifier"
+Syntax error in SQL statement "delete [*]* from orders"; expected "identifier"; SQL statement:
+delete * from orders [42001-214]
+2022-12-19 16:16:56 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "delete [*]* from orders where id = 1"; ожидалось "identifier"
+Syntax error in SQL statement "delete [*]* from orders where id = 1"; expected "identifier"; SQL statement:
+delete * from orders where id = 1 [42001-214]
+2022-12-19 16:17:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "delete [*]* from orders where id = 0"; ожидалось "identifier"
+Syntax error in SQL statement "delete [*]* from orders where id = 0"; expected "identifier"; SQL statement:
+delete * from orders where id = 0 [42001-214]

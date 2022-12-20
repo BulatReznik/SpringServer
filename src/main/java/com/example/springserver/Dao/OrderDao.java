@@ -1,5 +1,6 @@
 package com.example.springserver.Dao;
 
+import com.example.springserver.Models.Consignment;
 import com.example.springserver.Models.Order;
 import com.example.springserver.Repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,4 +33,5 @@ public class OrderDao
                 .forEach(orders::add);
         return orders;
     }
+    public Order getOrder(int orderId) {return repository.findById(orderId).get();}
 }

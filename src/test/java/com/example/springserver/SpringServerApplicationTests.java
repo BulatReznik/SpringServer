@@ -12,12 +12,4 @@ class SpringServerApplicationTests
 	@Test
 	void contextLoads() {
 	}
-	void addUserTest(){
-		User user = new User();
-		user.setFio("Булат Азатович");
-		user.setLogin("bulat");
-		user.setRole("dangeon master");
-		user.setPassword("1231231");
-		userDao.save(user);
-	}
 }

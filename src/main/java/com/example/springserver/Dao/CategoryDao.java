@@ -25,6 +25,8 @@ public class CategoryDao
         repository.deleteById(categoryId);
     }
 
+    public Category getCategory(int categoryId) {return repository.findById(categoryId).get();}
+
     public List<Category> getAllCategories()
     {
         List<Category> categories = new ArrayList<>();

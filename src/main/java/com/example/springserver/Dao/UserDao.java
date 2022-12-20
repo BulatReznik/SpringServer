@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Service
 public class UserDao
 {
@@ -32,4 +33,7 @@ public class UserDao
                 .forEach(users::add);
         return users;
     }
+    public User getUser(int userId) {return repository.findById(userId).get();}
+
+
 }

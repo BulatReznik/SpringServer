@@ -19,6 +19,7 @@ dependencies {
 	implementation 'com.h2database:h2:2.1.214'
 	implementation 'org.hibernate.validator:hibernate-validator'
 	implementation 'org.webjars:jquery:3.6.1'
+
 }
 
 tasks.named('test') {
