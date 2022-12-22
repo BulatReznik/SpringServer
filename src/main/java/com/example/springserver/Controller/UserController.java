@@ -28,9 +28,6 @@ public class UserController
         userDao.save(user);
     }
 
-    @DeleteMapping("/user/delete/{id}")
-    public void delete(@RequestParam(value = "id") Integer id) {userDao.delete(id);}
-
     @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
     public ResponseEntity<User> getUser(@PathVariable("id") int id)
     {
@@ -44,18 +41,14 @@ public class UserController
         }
     }
 
-    /*
     @RequestMapping(value = "/user/delete/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Void> delete(@PathVariable("id") int id)
-    {
+    public ResponseEntity<Void> delete(@PathVariable("id") int id) {
         try {
             userDao.delete(id);
             return new ResponseEntity<Void>(HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<Void>(HttpStatus.BAD_REQUEST);
         }
-    }*/
-
-
+    }
 
 }

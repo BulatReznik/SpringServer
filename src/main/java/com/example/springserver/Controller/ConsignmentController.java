@@ -40,4 +40,6 @@ public class ConsignmentController
     @GetMapping("/consignment/{id}")
     public void getConsignment(@PathVariable(value = "id") Integer id){ consignmentDao.getConsignment(id);}
 
+
+
 }

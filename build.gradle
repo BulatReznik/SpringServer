@@ -17,7 +17,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'com.h2database:h2:2.1.214'
-	implementation 'org.hibernate.validator:hibernate-validator'
 	implementation 'org.webjars:jquery:3.6.1'
 
 }

@@ -1,5 +1,6 @@
 package com.example.springserver.Controller;
 import com.example.springserver.Dao.OrderDao;
+import com.example.springserver.Dto.OrderDto;
 import com.example.springserver.Models.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,5 +39,14 @@ public class OrderController
 
     @GetMapping("/order/{id}")
     public void getOrder(@PathVariable(value = "id") Integer id){ orderDao.getOrder(id);}
+
+
+    @PostMapping(value = "/order/{orderId}/consignment/{consignmentId}/{count}/add")
+    public ResponseEntity<OrderDto> addConsignmentToOrder(@PathVariable final int orderId,
+                                                          @PathVariable final int consignmentId,
+                                                          @PathVariable final int count) {
+        Order order = orderDao.addConsignmentToOrder(orderId, consignmentId, count);
+        return new ResponseEntity<>(OrderDto.from(order), HttpStatus.OK);
+    }
 
 }

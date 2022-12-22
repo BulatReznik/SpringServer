@@ -50,3 +50,71 @@ delete * from orders where id = 1 [42001-214]
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "delete [*]* from orders where id = 0"; ожидалось "identifier"
 Syntax error in SQL statement "delete [*]* from orders where id = 0"; expected "identifier"; SQL statement:
 delete * from orders where id = 0 [42001-214]
+2022-12-21 17:21:13 jdbc[34]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT * FROM[*]"; ожидалось "identifier"
+Syntax error in SQL statement "SELECT * FROM[*]"; expected "identifier"; SQL statement:
+SELECT * FROM [42001-214]
+2022-12-21 18:42:22 jdbc[66]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-214]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:733)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 16 more
+2022-12-21 19:29:57 jdbc[86]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "'' (CONSIGNMENT_ORDER: ""ID"" INTEGER NOT NULL)"
+Data conversion error converting "'' (CONSIGNMENT_ORDER: ""ID"" INTEGER NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."CONSIGNMENT_ORDER"("ID","COUNT","SUBTOTAL","CONSIGNMENT_ID","ORDER_ID")VALUES(?,?,?,?,?) [22018-214]
+2022-12-21 19:29:57 jdbc[86]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "'' (CONSIGNMENT_ORDER: ""ID"" INTEGER NOT NULL)"
+Data conversion error converting "'' (CONSIGNMENT_ORDER: ""ID"" INTEGER NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."CONSIGNMENT_ORDER"("ID","COUNT","SUBTOTAL","CONSIGNMENT_ID","ORDER_ID")VALUES(?,?,?,?,?) [22018-214]
+2022-12-21 19:30:23 jdbc[86]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "'' (CONSIGNMENT_ORDER: ""SUBTOTAL"" FLOAT(24) NOT NULL)"
+Data conversion error converting "'' (CONSIGNMENT_ORDER: ""SUBTOTAL"" FLOAT(24) NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."CONSIGNMENT_ORDER"("ID","COUNT","SUBTOTAL","CONSIGNMENT_ID","ORDER_ID")VALUES(?,?,?,?,?) [22018-214]
+2022-12-21 19:30:23 jdbc[86]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "'' (CONSIGNMENT_ORDER: ""SUBTOTAL"" FLOAT(24) NOT NULL)"
+Data conversion error converting "'' (CONSIGNMENT_ORDER: ""SUBTOTAL"" FLOAT(24) NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."CONSIGNMENT_ORDER"("ID","COUNT","SUBTOTAL","CONSIGNMENT_ID","ORDER_ID")VALUES(?,?,?,?,?) [22018-214]
+2022-12-21 19:42:02 jdbc[87]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-214]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:733)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 16 more

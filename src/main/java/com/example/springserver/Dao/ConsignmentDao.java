@@ -2,6 +2,7 @@ package com.example.springserver.Dao;
 
 import com.example.springserver.Models.Category;
 import com.example.springserver.Models.Consignment;
+import com.example.springserver.Repository.CategoryRepository;
 import com.example.springserver.Repository.ConsignmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Streamable;
@@ -15,8 +16,12 @@ public class ConsignmentDao
 {
     @Autowired
     private ConsignmentRepository repository;
+    private CategoryRepository category;
 
-    public void save(Consignment consignment) {repository.save(consignment);}
+    public void save(Consignment consignment)
+    {
+        repository.save(consignment);
+    }
 
     public void delete(int consignmentId)
     {
